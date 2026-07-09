@@ -1,6 +1,48 @@
 {
   "songs": [
     {
+      "title": "TA DD Soroush (Rapkadeh)",
+      "artist": "Hiphopologist",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199068.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199068.mp3",
+      "durationSec": 192
+    },
+    {
+      "title": "Ye Bar Dige",
+      "artist": "Talk Down Ft Sepehr Khalse",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199066.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199066.mp3",
+      "durationSec": 233
+    },
+    {
+      "title": "Nim Shab",
+      "artist": "Amir Azimi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199064.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199064.mp3",
+      "durationSec": 170
+    },
+    {
+      "title": "Sogand",
+      "artist": "Emad Talebzadeh",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199062.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199062.mp3",
+      "durationSec": 259
+    },
+    {
+      "title": "Yadet Hast",
+      "artist": "Ahmad Saeedi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199060.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199060.mp3",
+      "durationSec": 199
+    },
+    {
+      "title": "Belaad Gang (Rapkadeh)",
+      "artist": "Vinak",
+      "coverUrl": "",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199058.m4a",
+      "durationSec": 225
+    },
+    {
       "title": "Shiraz Wine",
       "artist": "Soltew",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199053.jpg",
