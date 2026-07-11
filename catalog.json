@@ -1,6 +1,27 @@
 {
   "songs": [
     {
+      "title": "Gang Bang",
+      "artist": "Outlaw",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199071.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199071.music.file_327",
+      "durationSec": 167
+    },
+    {
+      "title": "Plea Deal (Rapkadeh)",
+      "artist": "Hiphopologist",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199070.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199070.music.file_325",
+      "durationSec": 227
+    },
+    {
+      "title": "Ghamar Dar Aghrab",
+      "artist": "Vinak",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199069.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199069.music.file_323",
+      "durationSec": 244
+    },
+    {
       "title": "TA DD Soroush (Rapkadeh)",
       "artist": "Hiphopologist",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199068.jpg",
