@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "After Party",
+      "artist": "Big Shaggy & Sepehr Khalse",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199113.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199113.mp3",
+      "durationSec": 166
+    },
+    {
+      "title": "We Will Rock",
+      "artist": "Big Shaggy & Putak",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199112.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199112.mp3",
+      "durationSec": 224
+    },
+    {
       "title": "Mehraboone Man",
       "artist": "Meysam Ebrahimi",
       "coverUrl": "",
