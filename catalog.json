@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Dashi (Rapkadeh)",
+      "artist": "Shahin Najafi & Erfan",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199118.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199118.mp3",
+      "durationSec": 265
+    },
+    {
+      "title": "Vaghti Raft (Rapkadeh)",
+      "artist": "Sijal & Sogand",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199116.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199116.m4a",
+      "durationSec": 176
+    },
+    {
       "title": "Dashi",
       "artist": "Shahin Najafi & Erfan",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199114.jpg",
@@ -1282,5 +1296,13 @@
       "durationSec": 147
     }
   ],
-  "videos": []
+  "videos": [
+    {
+      "title": "آهنگ",
+      "artist": "",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199117.jpg",
+      "videoUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199117.mp4",
+      "durationSec": 25
+    }
+  ]
 }
