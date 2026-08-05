@@ -1,6 +1,27 @@
 {
   "songs": [
     {
+      "title": "Baraye To (Rapkadeh)",
+      "artist": "Poori & Mahyar",
+      "coverUrl": "",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199128.m4a",
+      "durationSec": 332
+    },
+    {
+      "title": "Edgebar (Rapkadeh)",
+      "artist": "Dorcci",
+      "coverUrl": "",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199126.m4a",
+      "durationSec": 141
+    },
+    {
+      "title": "Fiancée (Rapkadeh)",
+      "artist": "Koorosh",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199124.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199124.mp3",
+      "durationSec": 260
+    },
+    {
       "title": "Dashi (Rapkadeh)",
       "artist": "Shahin Najafi & Erfan",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199118.jpg",
@@ -1297,6 +1318,20 @@
     }
   ],
   "videos": [
+    {
+      "title": "آهنگ",
+      "artist": "",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199127.jpg",
+      "videoUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199127.mp4",
+      "durationSec": 25
+    },
+    {
+      "title": "آهنگ",
+      "artist": "",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199125.jpg",
+      "videoUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199125.mp4",
+      "durationSec": 24
+    },
     {
       "title": "73WAUgfJuZCcOu7BHuqT+AwlTdnXUqhI.mp4",
       "artist": "",
