@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Let’s go",
+      "artist": "Poobon & Hiroosh",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199131.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199131.mp3",
+      "durationSec": 145
+    },
+    {
+      "title": "IDGAF",
+      "artist": "Arta",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199130.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199130.m4a",
+      "durationSec": 151
+    },
+    {
       "title": "Baraye To (Rapkadeh)",
       "artist": "Poori & Mahyar",
       "coverUrl": "",
@@ -1318,6 +1332,13 @@
     }
   ],
   "videos": [
+    {
+      "title": "آهنگ",
+      "artist": "",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199129.jpg",
+      "videoUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199129.mp4",
+      "durationSec": 25
+    },
     {
       "title": "آهنگ",
       "artist": "",
