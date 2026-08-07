@@ -1,6 +1,27 @@
 {
   "songs": [
     {
+      "title": "Baraye To (Ft Mahyar)",
+      "artist": "Poori",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199138.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199138.mp3",
+      "durationSec": 332
+    },
+    {
+      "title": "Mehraboone Man (Piano Version)",
+      "artist": "Meysam Ebrahimi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199136.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199136.mp3",
+      "durationSec": 193
+    },
+    {
+      "title": "No Other Version",
+      "artist": "DJ Aligator",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199134.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199134.mp3",
+      "durationSec": 161
+    },
+    {
       "title": "Paraffin",
       "artist": "Vinak",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199132.jpg",
