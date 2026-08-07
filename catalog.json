@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "Paraffin",
+      "artist": "Vinak",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199132.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199132.mp3",
+      "durationSec": 212
+    },
+    {
       "title": "Let’s go",
       "artist": "Poobon & Hiroosh",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199131.jpg",
