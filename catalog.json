@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Tighe Tize Zaman",
+      "artist": "Poori",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199141.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199141.m4a",
+      "durationSec": 271
+    },
+    {
+      "title": "Baz Shab Shod",
+      "artist": "Mehraad Jam",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199139.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199139.mp3",
+      "durationSec": 192
+    },
+    {
       "title": "Baraye To (Ft Mahyar)",
       "artist": "Poori",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199138.jpg",
@@ -1360,6 +1374,13 @@
     }
   ],
   "videos": [
+    {
+      "title": "آهنگ",
+      "artist": "",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199142.jpg",
+      "videoUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199142.mp4",
+      "durationSec": 24
+    },
     {
       "title": "آهنگ",
       "artist": "",
