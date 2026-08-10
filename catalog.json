@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Buggy (Rapkadeh)",
+      "artist": "Sepehr Khalse",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199145.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199145.mp3",
+      "durationSec": 121
+    },
+    {
+      "title": "dancin krono remix",
+      "artist": "aaron smith",
+      "coverUrl": "",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199143.mp3",
+      "durationSec": 256
+    },
+    {
       "title": "Tighe Tize Zaman",
       "artist": "Poori",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199141.jpg",
