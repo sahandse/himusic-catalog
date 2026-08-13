@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "Bazigar (Rapkadeh)",
+      "artist": "Isam & Behzad Leito & Tamara",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199159.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199159.m4a",
+      "durationSec": 240
+    },
+    {
       "title": "R.I.P",
       "artist": "Sepehr Khalse",
       "coverUrl": "",
