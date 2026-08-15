@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Prada",
+      "artist": "Sepehr Khalse & Hiphopologist",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199168.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199168.mp3",
+      "durationSec": 230
+    },
+    {
+      "title": "Dozdi Ni",
+      "artist": "Sepehr Khalse & Catchybeatz & Young Sudden",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199167.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199167.mp3",
+      "durationSec": 252
+    },
+    {
       "title": "Grave",
       "artist": "Shahin Najafi & Saghar",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199165.jpg",
