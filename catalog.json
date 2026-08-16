@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "Bi Bargasht",
+      "artist": "Aryanerg",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199172.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199172.mp3",
+      "durationSec": 271
+    },
+    {
       "title": "Alan Ke Aslan (Rapkadeh)",
       "artist": "Shayea & Canis",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199170.jpg",
