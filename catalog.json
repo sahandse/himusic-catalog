@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "GUZ GUZ",
+      "artist": "CatchyBeatz",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199173.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199173.m4a",
+      "durationSec": 220
+    },
+    {
       "title": "Bi Bargasht",
       "artist": "Aryanerg",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199172.jpg",
