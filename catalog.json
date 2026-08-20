@@ -1,6 +1,27 @@
 {
   "songs": [
     {
+      "title": "Bavar Kon",
+      "artist": "Vinak",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199176.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199176.mp3",
+      "durationSec": 188
+    },
+    {
+      "title": "Ba To",
+      "artist": "Haamim",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199175.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199175.mp3",
+      "durationSec": 218
+    },
+    {
+      "title": "Voodoo",
+      "artist": "Tohi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199174.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199174.mp3",
+      "durationSec": 159
+    },
+    {
       "title": "GUZ GUZ",
       "artist": "CatchyBeatz",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199173.jpg",
