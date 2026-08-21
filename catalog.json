@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Mirrors",
+      "artist": "Reza Pishro Ft Saaren",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199180.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199180.mp3",
+      "durationSec": 281
+    },
+    {
+      "title": "Azizam",
+      "artist": "Sami Low Ft Arta",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199178.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199178.mp3",
+      "durationSec": 192
+    },
+    {
       "title": "Bavar Kon",
       "artist": "Vinak",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199176.jpg",
