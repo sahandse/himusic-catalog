@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدیریت موزیک ویدیو | himusic-catalog</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --border:#262b35; --text:#f2f3f5;
+    --muted:#9aa1ac; --accent:#5b8cff; --accent-hover:#4577f0;
+    --danger:#ef5b5b; --success:#3ec776; --input:#1d212a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:"Vazirmatn","Segoe UI",Tahoma,sans-serif;
+    background:var(--bg); color:var(--text); min-height:100vh;
+    padding:24px 16px 80px;
+  }
+  .wrap{max-width:640px; margin:0 auto}
+  h1{font-size:20px; margin:0 0 4px}
+  .sub{color:var(--muted); font-size:13px; margin:0 0 24px}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:20px; margin-bottom:20px;
+  }
+  .card h2{font-size:15px; margin:0 0 14px; display:flex; align-items:center; gap:8px}
+  label{display:block; font-size:13px; color:var(--muted); margin:14px 0 6px}
+  label:first-of-type{margin-top:0}
+  input[type=text], input[type=password], input[type=url]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    background:var(--input); color:var(--text); font-size:14px; font-family:inherit;
+    outline:none; transition:border-color .15s;
+  }
+  input:focus{border-color:var(--accent)}
+  .req{color:var(--accent); font-size:11px}
+  button{
+    cursor:pointer; border:none; border-radius:9px; font-family:inherit; font-size:14px;
+    padding:12px 18px; transition:background .15s, opacity .15s;
+  }
+  .btn-primary{background:var(--accent); color:#fff; width:100%; font-weight:600; margin-top:18px}
+  .btn-primary:hover{background:var(--accent-hover)}
+  .btn-primary:disabled{opacity:.5; cursor:not-allowed}
+  .btn-ghost{background:transparent; color:var(--muted); border:1px solid var(--border)}
+  .btn-danger{background:transparent; color:var(--danger); border:1px solid var(--danger)}
+  .btn-danger:hover{background:rgba(239,91,91,.1)}
+  .msg{
+    margin-top:14px; padding:10px 12px; border-radius:9px; font-size:13px; display:none;
+    line-height:1.6;
+  }
+  .msg.show{display:block}
+  .msg.info{background:rgba(91,140,255,.12); color:#8fb0ff}
+  .msg.error{background:rgba(239,91,91,.12); color:#ff9d9d}
+  .msg.success{background:rgba(62,199,118,.12); color:#7fe3a4}
+  .token-row{display:flex; gap:8px}
+  .token-row input{flex:1}
+  .list-item{
+    display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--border);
+    align-items:center;
+  }
+  .list-item:last-child{border-bottom:none}
+  .thumb{
+    width:64px; height:36px; border-radius:6px; background:var(--input);
+    object-fit:cover; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-size:11px;
+  }
+  .li-info{flex:1; min-width:0}
+  .li-title{font-size:13.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .li-meta{font-size:12px; color:var(--muted); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .li-del{
+    background:transparent; border:none; color:var(--muted); font-size:18px; padding:4px 8px;
+    line-height:1; flex-shrink:0;
+  }
+  .li-del:hover{color:var(--danger)}
+  .empty{color:var(--muted); font-size:13px; text-align:center; padding:20px 0}
+  .badge{
+    display:inline-block; font-size:10px; padding:2px 7px; border-radius:100px;
+    background:rgba(91,140,255,.15); color:#8fb0ff; margin-inline-start:6px;
+  }
+  .spinner{
+    display:inline-block; width:14px; height:14px; border:2px solid rgba(255,255,255,.3);
+    border-top-color:#fff; border-radius:50%; animation:spin .7s linear infinite;
+    vertical-align:-2px; margin-inline-end:6px;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .help{font-size:11.5px; color:var(--muted); margin-top:6px; line-height:1.7}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎬 مدیریت موزیک ویدیو</h1>
+  <p class="sub">افزودن مستقیم ویدیو به himusic-catalog — بدون نیاز به ویرایش دستی JSON</p>
+
+  <div class="card">
+    <h2>🔑 اتصال به گیت‌هاب</h2>
+    <label>Personal Access Token <span class="req">(فقط روی همین مرورگر ذخیره می‌شود)</span></label>
+    <div class="token-row">
+      <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      <button class="btn-ghost" id="saveTokenBtn" type="button">ذخیره</button>
+    </div>
+    <p class="help">
+      یک توکن با دسترسی <code>repo</code> بساز: GitHub → Settings → Developer settings →
+      Personal access tokens → Generate new token (classic), اسکوپ <code>repo</code> را تیک بزن.
+      توکن فقط در حافظه همین مرورگر (localStorage) ذخیره می‌شود و به جای دیگری ارسال نمی‌شود؛
+      آن را در اختیار کسی قرار نده.
+    </p>
+    <div id="tokenMsg" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>➕ افزودن موزیک ویدیو جدید</h2>
+    <label>نام آهنگ <span class="req">*</span></label>
+    <input type="text" id="f_title" placeholder="مثلاً: Mirrors">
+    <label>نام ارتیست <span class="req">*</span></label>
+    <input type="text" id="f_artist" placeholder="مثلاً: Reza Pishro">
+    <label>ژانر</label>
+    <input type="text" id="f_genre" placeholder="مثلاً: هیپ‌هاپ">
+    <label>لینک عکس کاور</label>
+    <input type="url" id="f_cover" placeholder="https://.../cover.jpg">
+    <label>لینک مستقیم ویدیو (mp4) <span class="req">*</span></label>
+    <input type="url" id="f_video" placeholder="https://.../video.mp4">
+    <p class="help">
+      برای پیدا کردن لینک مستقیم ویدیو: صفحه ویدیو را باز کن، کلید <b>F12</b> را بزن (تب Network)،
+      روی ویدیو پخش بزن و فایل mp4 را در لیست درخواست‌ها پیدا کن، سپس روی آن راست‌کلیک و
+      Copy → Copy link address را بزن.
+    </p>
+    <button class="btn-primary" id="addBtn" type="button">افزودن و ذخیره در گیت‌هاب</button>
+    <div id="addMsg" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>📋 ویدیوهای ثبت‌شده <span class="badge" id="countBadge">0</span></h2>
+    <div id="list"><div class="empty">در حال بارگذاری...</div></div>
+    <div id="listMsg" class="msg"></div>
+  </div>
+</div>
+
+<script>
+const OWNER = "sahandse";
+const REPO = "himusic-catalog";
+const FILE_PATH = "manual-videos.json";
+const API_BASE = "https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/" + FILE_PATH;
+
+const $ = (id) => document.getElementById(id);
+
+function showMsg(el, type, text){
+  el.className = "msg show " + type;
+  el.textContent = text;
+}
+function hideMsg(el){ el.className = "msg"; }
+
+function getToken(){ return localStorage.getItem("gh_pat") || ""; }
+function setToken(t){ localStorage.setItem("gh_pat", t); }
+
+$("token").value = getToken();
+
+$("saveTokenBtn").addEventListener("click", () => {
+  const t = $("token").value.trim();
+  setToken(t);
+  showMsg($("tokenMsg"), "success", t ? "توکن ذخیره شد." : "توکن پاک شد.");
+  setTimeout(() => hideMsg($("tokenMsg")), 2500);
+  loadList();
+});
+
+async function ghRequest(method, body){
+  const token = getToken();
+  if (!token) throw new Error("NO_TOKEN");
+  const headers = {
+    "Authorization": "token " + token,
+    "Accept": "application/vnd.github+json"
+  };
+  const opts = { method, headers };
+  if (body) {
+    headers["Content-Type"] = "application/json";
+    opts.body = JSON.stringify(body);
+  }
+  const res = await fetch(API_BASE + (method === "GET" ? ("?t=" + Date.now()) : ""), opts);
+  if (!res.ok) {
+    const errBody = await res.json().catch(() => ({}));
+    const err = new Error(errBody.message || ("HTTP " + res.status));
+    err.status = res.status;
+    throw err;
+  }
+  return res.json();
+}
+
+function b64EncodeUnicode(str){
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function b64DecodeUnicode(str){
+  return decodeURIComponent(escape(atob(str)));
+}
+
+async function fetchCurrent(){
+  const data = await ghRequest("GET");
+  const content = b64DecodeUnicode(data.content.replace(/\n/g, ""));
+  let parsed;
+  try { parsed = JSON.parse(content); } catch(e){ parsed = { videos: [] }; }
+  if (!Array.isArray(parsed.videos)) parsed.videos = [];
+  return { sha: data.sha, json: parsed };
+}
+
+async function saveVideos(json, sha, commitMessage){
+  const body = {
+    message: commitMessage,
+    content: b64EncodeUnicode(JSON.stringify(json, null, 2)),
+    sha: sha
+  };
+  return ghRequest("PUT", body);
+}
+
+function isRealEntry(v){
+  return v && typeof v.videoUrl === "string" && v.videoUrl.trim() !== "";
+}
+
+async function loadList(){
+  const listEl = $("list");
+  const token = getToken();
+  if (!token) {
+    listEl.innerHTML = '<div class="empty">برای دیدن لیست، ابتدا توکن گیت‌هاب را وارد و ذخیره کن.</div>';
+    $("countBadge").textContent = "0";
+    return;
+  }
+  listEl.innerHTML = '<div class="empty"><span class="spinner"></span>در حال بارگذاری...</div>';
+  try {
+    const { json } = await fetchCurrent();
+    const videos = json.videos.filter(isRealEntry);
+    $("countBadge").textContent = String(videos.length);
+    if (videos.length === 0) {
+      listEl.innerHTML = '<div class="empty">هنوز ویدیویی اضافه نشده.</div>';
+      return;
+    }
+    listEl.innerHTML = "";
+    videos.forEach((v) => {
+      const row = document.createElement("div");
+      row.className = "list-item";
+      const meta = [v.artist, v.genre].filter(Boolean).join(" · ");
+      row.innerHTML = `
+        <div class="thumb">${v.coverUrl ? `<img src="${v.coverUrl}" style="width:100%;height:100%;object-fit:cover;border-radius:6px" onerror="this.style.display='none'">` : "بدون کاور"}</div>
+        <div class="li-info">
+          <div class="li-title">${escapeHtml(v.title || "(بدون عنوان)")}</div>
+          <div class="li-meta">${escapeHtml(meta || "-")}</div>
+        </div>
+        <button class="li-del" title="حذف">✕</button>
+      `;
+      row.querySelector(".li-del").addEventListener("click", () => deleteVideo(v.videoUrl));
+      listEl.appendChild(row);
+    });
+  } catch (e) {
+    listEl.innerHTML = "";
+    showMsg($("listMsg"), "error", "خطا در بارگذاری لیست: " + e.message);
+  }
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+async function deleteVideo(videoUrl){
+  if (!confirm("این ویدیو حذف شود؟")) return;
+  hideMsg($("listMsg"));
+  try {
+    const { sha, json } = await fetchCurrent();
+    json.videos = json.videos.filter((v) => !(isRealEntry(v) && v.videoUrl === videoUrl));
+    await saveVideos(json, sha, "admin: remove video");
+    showMsg($("listMsg"), "success", "حذف شد.");
+    loadList();
+  } catch (e) {
+    showMsg($("listMsg"), "error", "خطا در حذف: " + e.message);
+  }
+}
+
+$("addBtn").addEventListener("click", async () => {
+  hideMsg($("addMsg"));
+  const title = $("f_title").value.trim();
+  const artist = $("f_artist").value.trim();
+  const genre = $("f_genre").value.trim();
+  const coverUrl = $("f_cover").value.trim();
+  const videoUrl = $("f_video").value.trim();
+
+  if (!getToken()) {
+    showMsg($("addMsg"), "error", "ابتدا توکن گیت‌هاب را وارد و ذخیره کن.");
+    return;
+  }
+  if (!title || !artist || !videoUrl) {
+    showMsg($("addMsg"), "error", "نام آهنگ، نام ارتیست و لینک ویدیو الزامی هستند.");
+    return;
+  }
+
+  const btn = $("addBtn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>در حال ذخیره...';
+
+  try {
+    const { sha, json } = await fetchCurrent();
+    const real = json.videos.filter(isRealEntry);
+
+    const dup = real.some((v) => v.videoUrl.trim() === videoUrl);
+    if (dup) {
+      showMsg($("addMsg"), "error", "این لینک ویدیو قبلاً اضافه شده — لینک تکراری ذخیره نمی‌شود.");
+      return;
+    }
+
+    real.push({ title, artist, genre, coverUrl, videoUrl });
+    json.videos = real;
+
+    await saveVideos(json, sha, "admin: add video - " + title);
+    showMsg($("addMsg"), "success", "با موفقیت اضافه شد. اپ در بازدید بعدی صفحه موزیک ویدیو آن را نشان می‌دهد.");
+    $("f_title").value = "";
+    $("f_artist").value = "";
+    $("f_genre").value = "";
+    $("f_cover").value = "";
+    $("f_video").value = "";
+    loadList();
+  } catch (e) {
+    if (e.message === "NO_TOKEN") {
+      showMsg($("addMsg"), "error", "ابتدا توکن گیت‌هاب را وارد و ذخیره کن.");
+    } else if (e.status === 401) {
+      showMsg($("addMsg"), "error", "توکن نامعتبر است یا دسترسی کافی ندارد.");
+    } else if (e.status === 409) {
+      showMsg($("addMsg"), "error", "فایل هم‌زمان توسط جای دیگری تغییر کرد — دوباره تلاش کن.");
+    } else {
+      showMsg($("addMsg"), "error", "خطا: " + e.message);
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "افزودن و ذخیره در گیت‌هاب";
+  }
+});
+
+loadList();
+</script>
+</body>
+</html>
