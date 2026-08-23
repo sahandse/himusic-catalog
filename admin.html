@@ -26,12 +26,16 @@
   .card h2{font-size:15px; margin:0 0 14px; display:flex; align-items:center; gap:8px}
   label{display:block; font-size:13px; color:var(--muted); margin:14px 0 6px}
   label:first-of-type{margin-top:0}
-  input[type=text], input[type=password], input[type=url]{
+  input[type=text], input[type=password], input[type=url], textarea{
     width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
     background:var(--input); color:var(--text); font-size:14px; font-family:inherit;
     outline:none; transition:border-color .15s;
   }
-  input:focus{border-color:var(--accent)}
+  textarea{
+    resize:vertical; min-height:90px; max-height:260px; font-family:monospace; font-size:11.5px;
+    direction:ltr; text-align:left; line-height:1.5;
+  }
+  input:focus, textarea:focus{border-color:var(--accent)}
   .req{color:var(--accent); font-size:11px}
   button{
     cursor:pointer; border:none; border-radius:9px; font-family:inherit; font-size:14px;
@@ -105,6 +109,21 @@
       آن را در اختیار کسی قرار نده.
     </p>
     <div id="tokenMsg" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 استخراج خودکار از View Source</h2>
+    <label>کد صفحه (HTML)</label>
+    <textarea id="sourceInput" placeholder="کد صفحه ویدیو رو اینجا پیست کن..."></textarea>
+    <p class="help">
+      صفحه ویدیو (اینستاگرام، تلگرام و...) رو باز کن → راست‌کلیک → <b>View Page Source</b>
+      (یا کلید <b>Ctrl+U</b>) → توی صفحه باز شده همه چیز رو انتخاب کن (<b>Ctrl+A</b>) و کپی کن
+      (<b>Ctrl+C</b>) → همینجا پیست کن (<b>Ctrl+V</b>) و دکمه زیر رو بزن. عنوان، لینک ویدیو،
+      عکس کاور و در صورت پیدا شدن ژانر/ارتیست به‌صورت خودکار توی فرم پایین پر می‌شن — قبل از
+      ذخیره حتماً یک نگاه بنداز و اصلاح کن.
+    </p>
+    <button class="btn-ghost" id="extractBtn" type="button" style="width:100%; margin-top:10px;">استخراج اطلاعات</button>
+    <div id="extractMsg" class="msg"></div>
   </div>
 
   <div class="card">
@@ -212,6 +231,94 @@ async function saveVideos(json, sha, commitMessage){
 function isRealEntry(v){
   return v && typeof v.videoUrl === "string" && v.videoUrl.trim() !== "";
 }
+
+// --- Best-effort extraction from a pasted "View Page Source" dump ---
+// Reads og:* meta tags for title/cover/video where present, and falls back to
+// scanning the raw text for a direct .mp4/.m3u8 link and a hashtag as a genre
+// guess. This is a heuristic, not a guarantee — the admin reviews the fields
+// before saving.
+function decodeJsonEscapes(s){
+  return s.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+          .replace(/\\\//g, "/");
+}
+
+function metaContent(doc, name){
+  if (!doc) return "";
+  const el = doc.querySelector(`meta[property="${name}"], meta[name="${name}"]`);
+  return el ? (el.getAttribute("content") || "").trim() : "";
+}
+
+function extractFromSource(raw){
+  const result = { title: "", artist: "", genre: "", coverUrl: "", videoUrl: "" };
+  let doc = null;
+  try { doc = new DOMParser().parseFromString(raw, "text/html"); } catch (e) {}
+
+  result.coverUrl = metaContent(doc, "og:image") || metaContent(doc, "twitter:image");
+
+  let videoUrl = metaContent(doc, "og:video:secure_url") || metaContent(doc, "og:video") || metaContent(doc, "og:video:url");
+  if (!videoUrl) {
+    const decoded = decodeJsonEscapes(raw);
+    const m = decoded.match(/https?:\/\/[^\s"'<>\\]+?\.mp4[^\s"'<>\\]*/i) ||
+              decoded.match(/https?:\/\/[^\s"'<>\\]+?\.m3u8[^\s"'<>\\]*/i);
+    if (m) videoUrl = m[0];
+  }
+  result.videoUrl = videoUrl || "";
+
+  let ogTitle = metaContent(doc, "og:title");
+  if (!ogTitle && doc) {
+    const t = doc.querySelector("title");
+    ogTitle = t ? t.textContent.trim() : "";
+  }
+  ogTitle = ogTitle.replace(/\s+/g, " ").trim();
+
+  let cleaned = ogTitle
+    .replace(/on Instagram.*/i, "")
+    .replace(/\(@[^)]*\)/g, "")
+    .replace(/[•|]\s*.*$/, "")
+    .trim();
+
+  if (cleaned.includes(" - ")) {
+    const idx = cleaned.indexOf(" - ");
+    result.artist = cleaned.slice(0, idx).trim();
+    result.title = cleaned.slice(idx + 3).trim();
+  } else {
+    result.title = cleaned;
+  }
+
+  const desc = metaContent(doc, "og:description") || raw;
+  const hashMatch = desc.match(/#([آ-یA-Za-z0-9_]{2,})/);
+  if (hashMatch) result.genre = hashMatch[1];
+
+  return result;
+}
+
+$("extractBtn").addEventListener("click", () => {
+  hideMsg($("extractMsg"));
+  const raw = $("sourceInput").value.trim();
+  if (!raw) {
+    showMsg($("extractMsg"), "error", "اول کد صفحه رو پیست کن.");
+    return;
+  }
+  const found = extractFromSource(raw);
+  if (found.title) $("f_title").value = found.title;
+  if (found.artist) $("f_artist").value = found.artist;
+  if (found.genre) $("f_genre").value = found.genre;
+  if (found.coverUrl) $("f_cover").value = found.coverUrl;
+  if (found.videoUrl) $("f_video").value = found.videoUrl;
+
+  const missing = [];
+  if (!found.title) missing.push("عنوان");
+  if (!found.videoUrl) missing.push("لینک ویدیو");
+  if (!found.genre) missing.push("ژانر");
+
+  if (!found.videoUrl && !found.title) {
+    showMsg($("extractMsg"), "error", "چیزی پیدا نشد. مطمئن شو کد کامل صفحه (View Source) رو پیست کردی.");
+  } else if (missing.length) {
+    showMsg($("extractMsg"), "info", "پر شد — این‌ها پیدا نشدن و باید دستی وارد کنی: " + missing.join("، "));
+  } else {
+    showMsg($("extractMsg"), "success", "فرم پایین پر شد — قبل از ذخیره یک نگاه بنداز.");
+  }
+});
 
 async function loadList(){
   const listEl = $("list");
