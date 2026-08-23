@@ -2,11 +2,11 @@
   "_help": "این فایل را در گیت‌هاب ویرایش کن (دکمه مداد). برای هر موزیک ویدیو یک آیتم داخل videos اضافه کن: title (نام آهنگ، الزامی)، artist (نام خواننده، الزامی)، genre (ژانر، اختیاری)، coverUrl (لینک عکس کاور، اختیاری)، videoUrl (لینک مستقیم mp4، الزامی — با F12/Network یا view-source لینک مستقیم رو پیدا کن). لینک‌های تکراری (videoUrl یکسان) خودکار نادیده گرفته می‌شن و در اپ اضافه نمی‌شن. بعد از ذخیره در گیت‌هاب، اپ همون موقع که این فایل رو دوباره می‌خونه (تازه‌سازی صفحه موزیک ویدیو) نمایششون می‌ده — نیازی به هیچ اجرای جداگانه‌ای نیست.",
   "videos": [
     {
-      "title": "",
-      "artist": "",
-      "genre": "",
-      "coverUrl": "",
-      "videoUrl": ""
+      "title": "دانلود موزیک ویدیو امیر عباس گلاب دیگر نیست با بهترین کیفیت",
+      "artist": "AmirAbas Golab",
+      "genre": "Pop",
+      "coverUrl": "https://rozmusic.com/wp-content/uploads/2026/08/Amir-Abbas-Golab-Digar-Nist-.jpg",
+      "videoUrl": "https://dl.rozmusic.com/Music%20Video/1405/05/30/Amir%20Abbas%20Golab%20-%20Digar%20Nist%20480p_RozMusic.mp4"
     }
   ]
 }
