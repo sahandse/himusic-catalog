@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "Vice City (Rapkadeh)",
+      "artist": "Big Shaggy & Dariush",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199186.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199186.mp3",
+      "durationSec": 147
+    },
+    {
       "title": "Penalty (Rapkadeh)",
       "artist": "Behzad Leito & Sepehr Khalse",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199184.jpg",
