@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Hey (Rapkadeh)",
+      "artist": "TM Bax",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199192.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199192.mp3",
+      "durationSec": 158
+    },
+    {
+      "title": "Fooroodgah - HEEN's Reinterpretation (Rapkadeh)",
+      "artist": "Mehrad Hidden",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199190.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199190.mp3",
+      "durationSec": 207
+    },
+    {
       "title": "Voices (Rapkadeh)",
       "artist": "Parsa & Arta",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199188.jpg",
