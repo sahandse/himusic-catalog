@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Bechid",
+      "artist": "Putak",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199220.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199220.mp3",
+      "durationSec": 160
+    },
+    {
+      "title": "Balayim",
+      "artist": "Mehyad & TM Bax",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199219.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199219.mp3",
+      "durationSec": 145
+    },
+    {
       "title": "New🔥",
       "artist": "@Aslimusiic",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199201.jpg",
