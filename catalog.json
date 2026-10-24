@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Jahanam",
+      "artist": "Hoodadk4 & Chvrsi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199269.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199269.mp3",
+      "durationSec": 199
+    },
+    {
+      "title": "Del Too Delam Nist",
+      "artist": "Behzad Leito, Koorosh, Tamara, Sami Low, Isam",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199268.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199268.m4a",
+      "durationSec": 260
+    },
+    {
       "title": "Payande",
       "artist": "Vinak",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199267.jpg",
