@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Aziatam",
+      "artist": "Shayea",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199271.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199271.mp3",
+      "durationSec": 160
+    },
+    {
+      "title": "Hoo Hoo Chi Chi",
+      "artist": "Tohi",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199270.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199270.mp3",
+      "durationSec": 142
+    },
+    {
       "title": "Jahanam",
       "artist": "Hoodadk4 & Chvrsi",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199269.jpg",
