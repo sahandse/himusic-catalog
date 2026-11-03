@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Fargh Darim",
+      "artist": "Sepehr Khalse",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199277.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199277.mp3",
+      "durationSec": 97
+    },
+    {
+      "title": "Cheme 2",
+      "artist": "Mahyar",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199276.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199276.mp3",
+      "durationSec": 192
+    },
+    {
       "title": "SEPAR",
       "artist": "YAS & REZA PISHRO & TECH N9NE",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199275.jpg",
