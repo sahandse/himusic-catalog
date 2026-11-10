@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "Dash Sepi",
+      "artist": "Dariu$h",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199279.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199279.mp3",
+      "durationSec": 161
+    },
+    {
+      "title": "Jasir Asani",
+      "artist": "Pouriya Adroit",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199278.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199278.mp3",
+      "durationSec": 132
+    },
+    {
       "title": "Fargh Darim",
       "artist": "Sepehr Khalse",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199277.jpg",
