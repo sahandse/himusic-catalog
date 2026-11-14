@@ -1,6 +1,13 @@
 {
   "songs": [
     {
+      "title": "VAY",
+      "artist": "Mersad & Kixty",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199282.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199282.mp3",
+      "durationSec": 161
+    },
+    {
       "title": "ZEMESTOON",
       "artist": "Dorcci",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199281.jpg",
