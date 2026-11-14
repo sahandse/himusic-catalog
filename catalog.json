@@ -1,6 +1,20 @@
 {
   "songs": [
     {
+      "title": "ZEMESTOON",
+      "artist": "Dorcci",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199281.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199281.mp3",
+      "durationSec": 220
+    },
+    {
+      "title": "DORANE TO TAMOOMEH",
+      "artist": "Shadmehr Aghili",
+      "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199280.jpg",
+      "audioUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199280.mp3",
+      "durationSec": 242
+    },
+    {
       "title": "Dash Sepi",
       "artist": "Dariu$h",
       "coverUrl": "https://github.com/sahandse/himusic-catalog/releases/download/catalog-media/872199279.jpg",
